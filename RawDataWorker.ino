@@ -12,7 +12,7 @@ IPAddress serverIP(192, 168, 10, 200);
 const int serverPort = 5050;
 
 // ===== КАЛИБРОВКА =====
-const float CALIBRATION = 85;
+const float CALIBRATION = 4; // Выше больше сила тока, ниже меньше сила тока
 const float CURRENT_THRESHOLD = 0.05;  // Мертвая зона по силе тока (А)
 const float VOLTAGE = 230.0;
 
