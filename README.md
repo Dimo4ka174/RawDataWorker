@@ -7,6 +7,7 @@
 [![Shield](https://img.shields.io/badge/shield-Ethernet%20W5100-informational)]()
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Build firmware](https://github.com/Dimo4ka174/RawDataWorker/actions/workflows/build.yml/badge.svg)](https://github.com/Dimo4ka174/RawDataWorker/actions/workflows/build.yml)
+[![Latest release](https://img.shields.io/github/v/release/Dimo4ka174/RawDataWorker)](https://github.com/Dimo4ka174/RawDataWorker/releases)
 
 ---
 
@@ -142,6 +143,18 @@ contract, error handling and retry behaviour.
 
 ---
 
+## Pre-built firmware
+
+If you just want to flash a working binary without setting up the
+Arduino toolchain, grab `RawDataWorker.ino.standard.hex` from the
+[latest release](https://github.com/Dimo4ka174/RawDataWorker/releases/latest).
+
+The pre-built binary uses the default configuration from the source
+code. If you need a different IP address, machine name, or CT
+calibration, build the sketch yourself using the instructions above.
+
+---
+
 ## Design notes & known limitations
 
 - **Blocking HTTP.** While the request is in flight (up to
@@ -161,12 +174,25 @@ contract, error handling and retry behaviour.
 
 ```
 .
-├── firmware/       Arduino sketch
-│   └── RawDataWorker/
-├── hardware/       Wiring diagram, photos, enclosure drawings
-├── docs/           Protocol description
+├── .github/workflows/    CI: build the sketch on every push
+├── firmware/
+│   └── RawDataWorker/    Arduino sketch (folder name = sketch name)
+├── hardware/
+│   ├── case/             3D enclosure drawings
+│   ├── photos/           Photos of the assembled device
+│   └── wiring/           Wiring diagram
+├── docs/
+│   └── protocol.md       HTTP contract between the device and AWM
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── LICENSE
 └── README.md
 ```
+
+> The `firmware/RawDataWorker/` folder has the same name as the `.ino`
+> file inside it. This is required by the Arduino build system — the
+> sketch name must match the folder name.
 
 ---
 
