@@ -1,2 +1,18 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Explicit binary types
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.gif   binary
+*.dwg   binary
+*.pdf   binary
+*.hex   binary
+*.elf   binary
+*.bin   binary
+
+# Arduino sources
+*.ino   text
+*.cpp   text
+*.h     text
